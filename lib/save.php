@@ -27,6 +27,6 @@ if ($_POST["savebutton"] == "Save") {
         if (ExecuteSQL($sql)) $new_url = "https://wdev.be/wdev_nicole/dag2/$afterinsert?insertOK=true";
     }
 
-    print $sql;
+//    print $sql;
     header("Location: $new_url");
 }

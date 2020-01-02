@@ -30,32 +30,65 @@ if ($_POST["editbutton"] == "Edit") {
 }
 
 if ($_POST["deletebutton"] == "Delete") {
-    try {
-        $conn = GetConnection();
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // sql to delete a record
-        $sql = "DELETE FROM $tablename WHERE $pkey=" . $_POST[$pkey];
+    $data = GetData("SELECT * FROM exercises WHERE exe_id=$pkey");
 
-        // use exec() because no results are returned
-        $conn->exec($sql);
-        echo "Record deleted successfully";
-        if (ExecuteSQL($sql)) $new_url = "wdev_nicole/dag2/$afterinsert?insertOK=true";
-
-    } catch (PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
+    $sql = "DELETE from exercises WHERE exe_id=$pkey";
+    if(ExecuteSQL($sql)) {
+        echo'success';
+//        header("Location: https://wdev.be/wdev_nicole/dag2/profile.php");
+    } else {
+        echo 'Deletion error';
     }
+//    try {
+//        $pdo = GetConnection();
+//        // set the PDO error mode to exception
+//        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//
+//        // sql to delete a record
+//        $stmt = $pdo->prepare("DELETE FROM exercises WHERE id= :id");
+//        $stmt->bindParam(':id', $pkey);
+//        $stmt->execute();
+//
+//        // use exec() because no results are returned
+//        echo "Record deleted successfully";
+//    } catch (PDOException $e) {
+//        echo $sql . "<br>" . $e->getMessage();
+//    }
+//
+//    $pdo = null;
 
-    $conn = null;
+}
+
+////////////////////
+//if ($_POST["deletebutton"] == "Delete") {
+//    try {
+//        $conn = GetConnection();
+//        // set the PDO error mode to exception
+//        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//
+//        // sql to delete a record
+//        $sql = "DELETE FROM $tablename WHERE $pkey=" . $_GET[$pkey];
+//
+//        // use exec() because no results are returned
+//        $conn->exec($sql);
+//        echo "Record deleted successfully";
+//        if (ExecuteSQL($sql)) $new_url = "wdev_nicole/dag2/$afterinsert?insertOK=true";
+//
+//    } catch (PDOException $e) {
+//        echo $sql . "<br>" . $e->getMessage();
+//    }
+//
+//    $conn = null;
 //    print $sql;
-    header("Location: $new_url");
+//    header("Location: $new_url");
+
+    /////////////////////////////////////
 
         ///
 //        $sql = "DELETE FROM $tablename WHERE $pkey=" . $_GET[$pkey];
 //        if (ExecuteSQL($sql)) $new_url = "wdev_nicole/dag2/$afterinsert?insertOK=true";
 
-}
 
 
 ///////

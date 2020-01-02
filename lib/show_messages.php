@@ -12,7 +12,7 @@ function ShowMessages()
         {
             $row = array( "message" => $message );
             $templ = LoadTemplate("messages");
-            print ReplaceContentOneRow( $row, $templ ); //11111
+            print ReplaceContentOneRow( $row, $templ );
         }
 
         unset($_SESSION['msg']);

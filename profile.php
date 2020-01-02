@@ -10,9 +10,9 @@ BasicHead($css);
     <div class="band">
         <a href="#"><img id="user-icon" src="img/user-icon.JPG" alt="user-icon"></a>
         <?php
-        $data = GetData("select * from users where usr_id=" . $_GET['id'] );
-        $template = LoadTemplate("profile_greeting");
-        print ReplaceContent( $data, $template);
+//        $data = GetData("select * from users where usr_id=" . $_GET['id'] );
+//        $template = LoadTemplate("profile_greeting");
+//        print ReplaceContent( $data, $template);
         ShowMessages();
         ?>
 

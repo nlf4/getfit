@@ -1,5 +1,14 @@
 <?php
 
+function IsLoggedIn ()
+{
+    if ($_GET['id'] === null or $_GET['id'] == $_SESSION['id']){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function NavBar() {
     print LoadTemplate("navbar");
 }
