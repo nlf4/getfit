@@ -1,11 +1,13 @@
 <!--template for one column in the body of options.php-->
-<div class="options-item">
 
+    <form action="post" action="lib/option.php">
+        <div class="options-item">
+        <input type="hidden" id="opt_name" name="opt_name" value="@@opt_name@@">
+        <!--    <a href="exercise_form.php?id=@@exe_id@@">-->
+        <a href="exercise_form.php?id=@@opt_id@@">
 
-<!--    <a href="exercise_form.php?id=@@exe_id@@">-->
-    <a href="exercise_form.php">
-
-        <img class="img-fluid" src=img/@@opt_img@@.jpg>
-    </a>
+            <img class="img-fluid" src=img/@@opt_img@@.jpg>
+        </a>
 
 </div>
+    </form>

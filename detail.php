@@ -6,6 +6,7 @@ NavBar();
 ?>
 <body>
     <?php
+
     $data = GetData("select * from exercises where exe_id=" . $_GET['id'] );
     $template = LoadTemplate("detail");
     print ReplaceContent( $data, $template);

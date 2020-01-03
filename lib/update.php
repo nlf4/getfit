@@ -31,7 +31,7 @@ if ($_POST["editbutton"] == "Edit") {
 
 if ($_POST["deletebutton"] == "Delete") {
 
-    $data = GetData("SELECT * FROM exercises WHERE exe_id=$pkey");
+//    $data = GetData("SELECT * FROM exercises WHERE exe_id=$pkey");
 
     $sql = "DELETE from exercises WHERE exe_id=$pkey";
     if(ExecuteSQL($sql)) {
