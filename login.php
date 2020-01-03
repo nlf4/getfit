@@ -5,7 +5,7 @@ require_once "lib/autoload.php";
 $css = array("login.css");
 
 //redirect naar profiel als de gebruiker al ingelogd is
-if ( isset($_SESSION['usr']) ) { $_SESSION["msg"][] = "You are already logged in!"; header("Location: https://wdev.be/wdev_nicole/dag2/profile.php"); exit; }
+if ( isset($_SESSION['usr']) ) { $_SESSION["msg"][] = "You are already logged in!"; header("Location:".$_application_folder."profile.php"); exit; }
 $css = array("login.css");
 BasicHead($css);
 //NavBar();

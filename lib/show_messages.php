@@ -5,7 +5,7 @@ function ShowMessages()
     if ( ! $_SESSION["head_printed"] ) BasicHead();
 
     //weergeven messages
-    if ( is_array($_SESSION["msg"]) AND count($_SESSION["msg"]) > 0 )
+    if ( isset($_SESSION["msg"]) AND count($_SESSION["msg"]) > 0 )
     {
 
         foreach( $_SESSION["msg"] as $message )

@@ -9,7 +9,9 @@ if ( $formname == "login_form" AND $buttonvalue == "Log in" )
 {
     if ( CheckLogin( $_POST['usr_email'], $_POST['usr_password'] ) )
     {
-        $_SESSION["msg"][] = "Welcome, " . $_SESSION['usr']['usr_email'] . "!" ;
+//        $string = $_SESSION['usr']['usr_email'];
+//        $name = strtok($string, '@');
+//        $_SESSION["msg"][] = "Welcome, " . $name . "!" ;
 //        header("Location: https://wdev.be/wdev_nicole/dag2/profile.php");
         header("Location:".$_application_folder."profile.php");
     }

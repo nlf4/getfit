@@ -46,6 +46,12 @@ body {
 
 
 }
+
+p#message {
+    font-size: 28px;
+    color: white;
+}
+
 #logout-btn {
     margin-right: 100px;
     padding: 5px 20px;

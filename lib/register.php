@@ -35,11 +35,10 @@ if ( $formname == "registration_form" AND $_POST['registerbutton'] == "Register"
 
     if ( ExecuteSQL($sql) )
     {
-        $_SESSION["msg"][] = "Thanks for registering!" ;
 
         if ( CheckLogin( $_POST["usr_email"] , $_POST["usr_password"]) )
         {
-            header("Location: https://wdev.be/wdev_nicole/dag2/profile.php");
+            header("Location:".$_application_folder."profile.php");
         }
     }
     else

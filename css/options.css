@@ -10,6 +10,7 @@ body {
     background-image: url("../img/options-bg4.png");
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 nav {

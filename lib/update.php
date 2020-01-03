@@ -35,10 +35,10 @@ if ($_POST["deletebutton"] == "Delete") {
 
     $sql = "DELETE from exercises WHERE exe_id=$pkey";
     if(ExecuteSQL($sql)) {
-        echo'success';
-//        header("Location: https://wdev.be/wdev_nicole/dag2/profile.php");
+        header("Location:".$_application_folder."profile.php");
     } else {
         echo 'Deletion error';
+        header("Location:".$_application_folder."detail.php");
     }
 //    try {
 //        $pdo = GetConnection();

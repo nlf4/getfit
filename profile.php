@@ -13,6 +13,9 @@ BasicHead($css);
 //        $data = GetData("select * from users where usr_id=" . $_GET['id'] );
 //        $template = LoadTemplate("profile_greeting");
 //        print ReplaceContent( $data, $template);
+        $string = $_SESSION['usr']['usr_email'];
+        $name = strtok($string, '@');
+        $_SESSION["msg"][] = "Welcome, " . $name . "!" ;
         ShowMessages();
         ?>
 
