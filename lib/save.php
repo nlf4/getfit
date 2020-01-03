@@ -7,6 +7,13 @@ $formname = $_POST["formname"];
 $afterinsert = $_POST["afterinsert"];
 $pkey = $_POST["pkey"];
 
+$exe_name = htmlentities($_POST['exe_name'], ENT_QUOTES);
+$exe_sets = htmlentities($_POST['exe_sets'], ENT_QUOTES);
+$exe_reps = htmlentities($_POST['exe_reps'], ENT_QUOTES);
+$exe_desc = htmlentities($_POST['exe_desc'], ENT_QUOTES);
+$exe_usr_id = $_SESSION['usr']['usr_id'];
+$exe_cat = htmlentities($_POST['exe_cat'], ENT_QUOTES);
+
 if ($_POST["savebutton"] == "Save") {
     $sql_body = array();
     //key-value pairs samenstellen
@@ -21,6 +28,15 @@ if ($_POST["savebutton"] == "Save") {
        if (ExecuteSQL($sql)) $new_url = "https://wdev.be/wdev_nicole/dag2/detail.php?id=" . $_POST[$pkey] . "&updateOK=true";
     } else //insert
     {
+        $sql =  "INSERT INTO $tablename SET " .
+            " exe_name='" . $exe_name  . "' , " .
+            " exe_sets='". $exe_sets ."' , " .
+            " exe_reps='" . $exe_reps . "' , " .
+            " exe_desc='" . $exe_desc . "' , " .
+            " exe_usr_id='" . $exe_usr_id . "' , " .
+            " exe_cat='" . $exe_cat . "' , ";
+
+
         $sql = "INSERT INTO $tablename SET " . implode(", ", $sql_body);
         if (ExecuteSQL($sql)) $new_url = "https://wdev.be/wdev_nicole/dag2/$afterinsert?insertOK=true";
     }
@@ -66,3 +82,8 @@ if ($_POST["savebutton"] == "Save") {
 //////    print $sql;
 ////    header("Location: $new_url");
 //}
+
+
+
+
+

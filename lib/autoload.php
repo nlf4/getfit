@@ -4,7 +4,7 @@ $_SESSION["head_printed"] = false;
 
 require_once "pdo.php";
 require_once "view_functions.php";
-require_once "password.php";
+require_once "pword.php";
 require_once "authorisation.php";
 require_once "show_messages.php";
 
