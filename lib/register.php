@@ -25,13 +25,14 @@ if ( $formname == "registration_form" AND $_POST['registerbutton'] == "Register"
 
     //wachtwoord coderen
     $password_encrypted = password_hash ( $_POST["usr_password"] , PASSWORD_DEFAULT );
+    $passwordconfirm_encrypted = password_hash ( $_POST["usr_passwordconfirm"] , PASSWORD_DEFAULT );
 
     $sql = "INSERT INTO $tablename SET " .
         " usr_firstname='" . htmlentities($_POST['usr_firstname'], ENT_QUOTES) . "' , " .
         " usr_lastname='" . htmlentities($_POST['usr_lastname'], ENT_QUOTES) . "' , " .
         " usr_email='" . $_POST['usr_email'] . "' , " .
         " usr_password='" . $password_encrypted . "' , " .
-        " usr_passwordconfirm='" . $password_encrypted . "'  " ;
+        " usr_passwordconfirm='" . $passwordconfirm_encrypted . "'  " ;
 
     if ( ExecuteSQL($sql) )
     {
