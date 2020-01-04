@@ -5,7 +5,6 @@ BasicHead($css);
 NavBar();
 ?>
 <body>
-
     <main>
         <div class="container">
             <?php

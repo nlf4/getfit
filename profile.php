@@ -51,8 +51,15 @@ BasicHead($css);
         </div>
         <div class="col exercise-column">
             <ul>
+                <form action="lib/search.php" method="GET">
+                    <input type="hidden" id="tablename" name="tablename" value="exercises">
+                    <input type="hidden" id="pkey" name="pkey" value="exe_id">
+
+                    <input id="search" name="search" type="text" placeholder="Type here">
+                    <input id="searchsubmit" type="submit" value="Search">
+                </form>
                 <?php
-                $data = GetData("select * from exercises");
+                $data = GetData("select * from exercises where exe_usr_id=" . $_SESSION['usr']['usr_id']);
                 $template = LoadTemplate("profile");
                 print ReplaceContent( $data, $template);
                 ?>

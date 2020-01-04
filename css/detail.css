@@ -34,15 +34,21 @@ body {
     text-transform: uppercase;
 }
 
-.options-nav .item.button {
+.options-nav li.item.button {
     margin-right: 100px;
     margin-top: 40px;
     background: #3ca587;
     height: 40px;
     font-size: 18px;
     color: whitesmoke;
-    padding: 20px 30px;
+    padding: 22px 28px;
     border-radius: 40px;
+    transition: all 300ms ease;
+    display: flex;
+    align-items: center;
+}
+.options-nav .item.button a#logout-text {
+    justify-self: center;
 }
 
 .options-nav .item.button:hover {
@@ -153,7 +159,7 @@ form#detail {
     order: 3;
 }
 
-input#editbutton, a#backbutton {
+a#editbutton, a#backbutton {
     margin-top: 40px;
     background: #3ca587;
     vertical-align: center;
@@ -162,6 +168,7 @@ input#editbutton, a#backbutton {
     padding: 10px 20px;
     border-radius: 40px;
     text-transform: uppercase;
+    text-decoration: none;
     align-items: center;
     border: none;
     margin-right: 10px;
@@ -181,7 +188,7 @@ button.deletebutton {
     transition: all 300ms ease;
 }
 
-input#editbutton:hover {
+a#editbutton:hover {
     background: #41d8b8;
     cursor: pointer;
 }

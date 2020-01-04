@@ -7,10 +7,6 @@ NavBar();
 ?>
     <body>
         <?php
-//            $optid = $_GET['id'];
-//            if($optid === 1){
-//                $cat = "stretches";
-//            }
             $data = GetData("select * from options where opt_id=" . $_GET['id'] );
             $template = LoadTemplate("exercise_form_template");
             print ReplaceContent( $data, $template);

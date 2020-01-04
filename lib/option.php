@@ -7,4 +7,4 @@ $tablename = $_POST["tablename"];
 $formname = $_POST["formname"];
 $afterinsert = $_POST["afterinsert"];
 $pkey = $_POST["pkey"];
-$option = $_POST["opt_name"];
+$option = $_POST["opt_id"];

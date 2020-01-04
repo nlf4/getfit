@@ -1,0 +1,37 @@
+<form id="login-form" class="form" action="lib/register.php" method="post">
+
+    <input type="hidden" id="formname" name="formname" value="registration_form">
+    <input type="hidden" id="tablename" name="tablename" value="users">
+    <input type="hidden" id="pkey" name="pkey" value="usr_id">
+
+    <h3 class="text-center text-info">Register</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="usr_firstname" class="text-info">First name</label><br>
+                <input type="text" name="usr_firstname" id="usr_firstname" class="form-control" value="">
+            </div>
+        </div>
+        <div class="col-sm-">
+            <label for="usr_lastname" class="text-info">Last name</label><br>
+            <input type="text" name="usr_lastname" id="usr_lastname" class="form-control" value="">
+        </div>
+        <div class="col-sm-">
+            <label for="usr_email" class="text-info">E-mail</label><br>
+            <input type="email" name="usr_email" id="usr_email" class="form-control" value="">
+        </div>
+        <div class="col-sm-">
+            <label for="usr_password" class="text-info">Password:</label><br>
+            <input type="password" name="usr_password" id="usr_password" class="form-control" value="">
+        </div>
+        <div class="col-sm-">
+            <label for="usr_passwordconfirm" class="text-info">Confirm password</label><br>
+            <input type="password" name="usr_passwordconfirm" id="usr_passwordconfirm" class="form-control" value="">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" class="btn btn-info btn-md" name="registerbutton" value="Register">
+        </div>
+    </div>
+
+</form>

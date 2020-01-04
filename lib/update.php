@@ -7,6 +7,7 @@ $tablename = $_POST["tablename"];
 $formname = $_POST["formname"];
 $afterinsert = $_POST["afterinsert"];
 $pkey = $_POST["pkey"];
+$exe_usr_id = $_SESSION['usr']['usr_id'];
 
 if ($_POST["editbutton"] == "Edit") {
     $sql_body = array();
@@ -33,7 +34,7 @@ if ($_POST["deletebutton"] == "Delete") {
 
 //    $data = GetData("SELECT * FROM exercises WHERE exe_id=$pkey");
 
-    $sql = "DELETE from exercises WHERE exe_id=$pkey";
+    $sql = "DELETE from exercises WHERE exe_id=$pkey and exe_usr_id=$exe_usr_id";
     if(ExecuteSQL($sql)) {
         header("Location:".$_application_folder."profile.php");
     } else {
