@@ -194,6 +194,7 @@ a#editbutton:hover {
 }
 button.deletebutton:hover {
     background: #41d8b8;
+    cursor: pointer;
 }
 a#backbutton:hover {
     background: #41d8b8;

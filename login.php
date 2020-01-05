@@ -1,11 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" dir="ltr">-->
-<!--<head>-->
-<!--    <meta charset="utf-8">-->
-<!--    <title>Login</title>-->
-<!--    <link href="../opmaak/opmaak.css" rel="stylesheet">-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>-->
-<!--</head>-->
 <?php
 $login_form = true;
 require_once "lib/autoload.php";

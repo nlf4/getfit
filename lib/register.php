@@ -1,6 +1,5 @@
 <?php
 $register_form = true;
-//$login_form = false;
 require_once "autoload.php";
 
 $formname = $_POST["formname"];

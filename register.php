@@ -1,19 +1,17 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" dir="ltr">-->
-<!--<head>-->
-<!--    <meta charset="utf-8">-->
-<!--    <title>Register</title>-->
-<!--    <link href="../opmaak/opmaak.css" rel="stylesheet">-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>-->
-<!--</head>-->
 <?php
 $register_form = true;
 require_once "lib/autoload.php";
+
+//redirect naar profiel als de gebruiker al ingelogd is
+if ( isset($_SESSION['usr']) ) {
+//    $_SESSION["msg"][] = "You are already logged in!";
+    header("Location:".$_application_folder."profile.php"); exit;
+}
+
 $css = array("register.css");
 BasicHead($css);
-//NavBar();
 ?>
-    <body>
+<body>
         <nav>
             <div id="logo"><a href="login.php" title="logo"><img src="img/logo4.svg" alt="getfiT logo" class="logo"></a></div>
             <div id="links">

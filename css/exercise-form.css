@@ -65,9 +65,9 @@ h1 {
 }
 .wrapper {
     width: 800px;
-    margin: 10px auto 20px auto;
+    margin: 0 auto 20px auto;
     border-radius: 25px;
-    padding: 1.9em;
+    /*padding: 1.8em;*/
 }
 .form {
     border-radius: 10px;
@@ -144,7 +144,7 @@ input#editsavebutton {
     border: none;
     transition: all 300ms ease;
     width: 60%;
-    margin-left: 55px;
+    margin-left: 70px;
 }
 
 input#editsavebutton:hover {

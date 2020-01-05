@@ -15,8 +15,8 @@ body {
 }
 
 #svg-logo {
-    width: 200px;
-    margin-left: -250px;
+    width: 175px;
+    margin-left: -145px;
     margin-right: 40px;
     margin-top: 40px;
 
@@ -24,7 +24,7 @@ body {
 
 .container {
     height: 1200px;
-    width: 1300px;
+    width: 75vw;
     background: rgba(163, 163, 165, 0.692);
     /*overflow: auto;*/
     /*display: block;*/
@@ -32,7 +32,7 @@ body {
 
 .band {
     height: 80px;
-    width: 1550px;
+    width: 84.7vw;
     background: rgb(107, 168, 46);
     margin-top: 130px;
     display: flex;
@@ -48,24 +48,26 @@ body {
 }
 
 p#message {
-    font-size: 28px;
+    font-size: 32px;
     color: white;
+    margin-right: 250px;
 }
 
 #logout-btn {
     margin-right: 100px;
     padding: 5px 20px;
     background: rgb(107, 168, 46);
-    color: #EDECE8;
-    border: 1px solid #EDECE8;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
     height: 40px;
     font-size: 20px;
     border-radius: 2em;
+    transition: all 300ms ease;
 }
 #logout-btn:hover {
     margin-right: 100px;
     padding: 5px 20px;
-    background: #EDECE8;
+    background: #FFFFFF;
     color: rgb(107, 168, 46);
     cursor: pointer;
 }
@@ -79,16 +81,17 @@ p#message {
 #trap {
     border-bottom: 0 solid transparent;
     border-left: 200px solid transparent;
-    border-right: 1300px solid transparent;
+    border-right: 70vw solid transparent;
     border-top: 80px solid rgb(197, 250, 117);
     height: 50px;
-    width: 50px;
-    margin-bottom: 10px;
+    width: 600px;
+    margin-bottom: 30px;
 }
 section {
     display: flex;
     justify-content: center;
 }
+
 
 .headings {
     height: 80px;
@@ -137,19 +140,19 @@ section {
 .col li a {
     text-decoration: none;
     color: #717876;;
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
+    display: block;
 }
 
 .col li {
     list-style: none;
     height: 50px;
     background: #FFFFFF;
-    /* border: 2px solid #112331; */
     border-radius: 30px;
     margin: 15px 15px;
-    padding: 15px;
     transition: all .2s ease;
+    line-height: 10px;
 }
 
 .col li:hover {
@@ -157,10 +160,28 @@ section {
 }
 
 .workout-column li {
-    height: 200px;
+    height: 100px;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.workout-column li a {
+    display: block;
 }
 .col li p {
     margin: 10px;
+}
+
+.exercise-column form#search-form {
+    margin-left: 100px;
+}
+
+.exercise-column form#search-form input {
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
 }
 
 #add-btn {
@@ -168,6 +189,7 @@ section {
     border: none;
     margin-left: 380px;
     margin-top: 10px;
+    margin-bottom: 15px;
     padding: 5px 20px;
     border-radius: 20px;
     cursor: pointer;

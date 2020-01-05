@@ -43,20 +43,20 @@ BasicHead($css);
 
         <div class="col workout-column">
             <ul>
-                <li><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, mollitia.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="#">Endurance training</a></li>
+                <li><a href="#">Strength exercises</a></li>
+                <li><a href="#">Daily stretching routine</a></li>
             </ul>
             <input id="add-btn" type="submit" value="+">
         </div>
         <div class="col exercise-column">
             <ul>
-                <form action="lib/search.php" method="GET">
+                <form id="search-form" action="lib/search.php" method="GET">
                     <input type="hidden" id="tablename" name="tablename" value="exercises">
                     <input type="hidden" id="pkey" name="pkey" value="exe_id">
 
-                    <input id="search" name="search" type="text" placeholder="Type here">
-                    <input id="searchsubmit" type="submit" value="Search">
+                    <input id="search" name="search" type="text" placeholder="Search">
+                    <input id="searchsubmit" type="submit" value="Go">
                 </form>
                 <?php
                 $data = GetData("select * from exercises where exe_usr_id=" . $_SESSION['usr']['usr_id']);
