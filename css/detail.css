@@ -73,7 +73,7 @@ h1 {
 }
 .wrapper {
     width: 800px;
-    margin: 30px auto 20px auto;
+    margin: 0 auto 20px auto;
     border-radius: 25px;
     padding: 1.9em;
 }
@@ -94,6 +94,7 @@ form#detail {
 
 }
 .description > textarea {
+    min-height: 50px;
     min-width: 16em;
     background: transparent;
     color: #fff;
@@ -105,6 +106,15 @@ form#detail {
     text-align: left;
     text-transform: uppercase;
     margin-bottom: 10px;
+}
+
+.description .img-block {
+    margin: 10px;
+    order: 3;
+    align-self: center;
+}
+.description .desc-block {
+    margin: 0 0 15px 0;
 }
 
 .details {
@@ -131,6 +141,13 @@ form#detail {
     /*background: transparent;*/
     /*border-radius: 40px;*/
     /*display: inline-block;*/
+}
+
+img#exe_img {
+    height: 225px;
+    width: auto;
+    margin: 15px;
+    border-radius: 10px;
 }
 
 .details #savebutton {

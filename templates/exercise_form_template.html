@@ -1,6 +1,6 @@
 <div class="wrapper">
     <h1 id="new-exercise-heading">New Exercise</h1>
-    <form method="post" action="lib/save.php" class="form" id="exercise-form">
+    <form method="post" action="lib/save.php" class="form" id="exercise-form" enctype="multipart/form-data">
 
         <input type="hidden" id="formname" name="formname" value="exercise_form">
         <input type="hidden" id="afterinsert" name="afterinsert" value="profile.php">
@@ -36,9 +36,9 @@
                 </div>
                 <div id="three" class="upload">
 <!--                    <form action="lib/upload_functions.php" method="post" enctype="multipart/form-data">-->
-<!--                        <label>Image </label>-->
-<!--                        <input type="file" name="exe_img" id="exe_img">-->
-<!--&lt;!&ndash;                        <input type="submit" id="fileupload" value="Upload" name="fileupload">&ndash;&gt;-->
+                        <label>Image </label>
+                        <input type="file" name="exe_img" id="exe_img">
+                        <input type="submit" id="fileupload" value="Upload" name="fileupload">
 <!--                    </form>-->
                 </div>
             </div>

@@ -3,6 +3,7 @@ require_once "autoload.php";
 //var_dump($_POST);
 //var_dump($_SESSION['usr']['usr_id']);
 //var_dump($_POST['exe_id']);
+//print json_encode($_FILES);
 
 $tablename = $_POST["tablename"];
 $formname = $_POST["formname"];
@@ -10,7 +11,7 @@ $afterinsert = $_POST["afterinsert"];
 $pkey = $_POST["pkey"];
 
 
-
+// insert
 if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes") {
     $exe_name = htmlentities($_POST['exe_name'], ENT_QUOTES);
     $exe_sets = htmlentities($_POST['exe_sets'], ENT_QUOTES);
@@ -20,13 +21,17 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
     $exe_cat = htmlentities($_POST['exe_cat'], ENT_QUOTES);
     $exe_id = htmlentities($_POST['exe_id'], ENT_QUOTES);
 
+    // behandling van afbeelding upload
     $exe_img = $_FILES['exe_img'];
-    $exe_img_name = time().'_'.$exe_img['name'];
+    $exe_img_name = $exe_img['name'];
     $img_path = '../img/'.$exe_img_name;
+
+    move_uploaded_file($exe_img['tmp_name'], $img_path);
 
     if ($_POST["savebutton"] == "Save") {
         $sql = "INSERT INTO exercises SET 
                       exe_name='$exe_name',
+                      exe_img='$exe_img_name',
                       exe_sets='$exe_sets',
                       exe_reps='$exe_reps',
                       exe_desc='$exe_desc',
