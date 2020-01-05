@@ -22,7 +22,6 @@ BasicHead($css);
         <div class="container">
             <?php print LoadTemplate("register"); ?>
         </div>
-        <footer>
             <section data-brackets-id="57" class="testimonials" id="about">
                 <h3 data-brackets-id="58" class="title">About Us</h3>
                 <p data-brackets-id="60" class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsum nulla eum ab minima sint, quis nemo omnis voluptatum adipisci beatae a amet odit similique, eos at sed dolor! Qui.
@@ -37,7 +36,6 @@ BasicHead($css);
                 </form>
             </section>
             <?php Footer(); ?>
-        </footer>
     </body>
 
     <script type="text/javascript">

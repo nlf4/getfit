@@ -152,50 +152,73 @@ nav div#logo {
 
 section#about {
     margin-top: 500px;
-    background-color: black;
+    background: #B9BFC8;
+    color: #073239;
 }
 
-section {
-    padding: 20px;
+section h3 {
+    margin: 15px;
+    font-size: 28px;
 }
+
+section p {
+    font-size: 18px;
+}
+
+section#about p {
+    width: 70%;
+    text-align: center;
+}
+
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 80px;
-    background-color: black;
-    opacity: 0.8;
+    padding: 0 20px;
+    background-color: rgba(12, 60, 70, 0.93);
     filter: alpha(opacity=50);
     color: ghostwhite;
-    margin-top: 20px;
 }
 
 /* footer ----------------------------------------------------------*/
 
 footer {
-    padding: 0;
-    z-index: 2;
+    height: 120px;
+    padding: 15px;
+    /*z-index: 2;*/
     position: relative;
+    /*color: #49767C;*/
     text-align: center;
-    color:whitesmoke;
-    background-color: dimgrey;
+    background: #B9BFC8;
     opacity: 0.5;
-    filter: alpha(opacity=50);   
+}
+
+footer p {
+    padding: 10px;
+}
+
+p.copyright {
+    color: #073239;
 }
 
 .social-media-list {
+    color: #073239;
     list-style: none;
+    padding: 10px;
+    background: #B9BFC8;
+
 }
 
 .social-media-list li {
     display: inline-block;
     margin-right: 1em;
-    font-size: 180%;
+    font-size: 30px;
+    transition: color 0.5s ease;
 }
 
 .social-media-list li a {
-    color: #888;
-    transition: color 0.5s;
+    color: #073239;
+    transition: color 0.5s ease;
 }
 
 .logo-facebook:hover {
@@ -208,21 +231,6 @@ footer {
 
 .logo-instagram:hover {
     color: mediumpurple
-}
-
-.social-media-list {
-    list-style: none;
-}
-
-.social-media-list li {
-    display: inline-block;
-    margin-right: 1em;
-    font-size: 180%;
-}
-
-.social-media-list li a {
-    color: #888;
-    transition: color 0.5s;
 }
 
 
