@@ -10,6 +10,3 @@ $rows = GetData($sql);
 foreach ($rows as $row) {
     echo "<div id='link' onClick='addText(\"".$row['exe_name']."\");'>" . $row['exe_name'] . "</div>";
 }
-
-
-?>

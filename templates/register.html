@@ -1,0 +1,35 @@
+<form id="login-form" action="lib/register.php" method="post" class="login-form">
+    <input type="hidden" id="formname" name="formname" 	value="registration_form">
+    <input type="hidden" id="tablename" name="tablename" value="users">
+    <input type="hidden" id="pkey" name="pkey" value="usr_id">
+
+    <h1>Register</h1>
+
+    <div class="txtb">
+        <input type="text" name="usr_firstname" id="usr_firstname" class="form-control" value="">
+        <span data-placeholder="First name"></span>
+    </div>
+
+    <div class="txtb">
+        <input type="text" name="usr_lastname" id="usr_lastname" class="form-control" value="">
+        <span data-placeholder="Last name"></span>
+    </div>
+
+    <div class="txtb">
+        <input type="email" name="usr_email" id="usr_email" class="form-control" value="">
+        <span data-placeholder="E-mail"></span>
+    </div>
+
+    <div class="txtb">
+        <input type="password" name="usr_password" id="usr_password" class="form-control" value="">
+        <span data-placeholder="Password"></span>
+    </div>
+
+    <div class="txtb">
+        <input type="password" name="usr_passwordconfirm" id="usr_passwordconfirm" class="form-control" value="">
+        <span data-placeholder="Confirm password"></span>
+    </div>
+
+    <input type="submit" class="btn btn-info btn-md logbtn" name="registerbutton" value="Register">
+<!--    <input type="submit" class="logbtn" name="registerbutton"  value="Register">-->
+</form>
