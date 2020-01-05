@@ -20,6 +20,10 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
     $exe_cat = htmlentities($_POST['exe_cat'], ENT_QUOTES);
     $exe_id = htmlentities($_POST['exe_id'], ENT_QUOTES);
 
+    $exe_img = $_FILES['exe_img'];
+    $exe_img_name = time().'_'.$exe_img['name'];
+    $img_path = '../img/'.$exe_img_name;
+
     if ($_POST["savebutton"] == "Save") {
         $sql = "INSERT INTO exercises SET 
                       exe_name='$exe_name',

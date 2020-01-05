@@ -50,7 +50,7 @@ body {
 p#message {
     font-size: 32px;
     color: white;
-    margin-right: 250px;
+    margin-right: 210px;
 }
 
 #logout-btn {
@@ -103,7 +103,7 @@ section {
 }
 .workout-heading {
     letter-spacing: 2px;
-    margin-right: 400px;
+    margin-right: 350px;
     margin-bottom: 5px;
     background: #fff;
     color: #717876;
@@ -133,7 +133,7 @@ section {
     box-shadow: -4px 4px 3px -1px rgb(75, 74, 75);
 }
 .workout-column {
-    margin-right: 150px;
+    margin-right: 100px;
 
 }
 

@@ -14,15 +14,8 @@ body{
     background-size: contain;
 }
 
-img.logo {
-    width: 200px;
-    margin-left: -250px;
-    margin-right: 40px;
-    margin-top: 40px;
-}
-
 .login-form{
-  width: 600px;
+  width: 460px;
   background: rgba(253, 248, 255, 0.73);
   height: 500px;
   padding: 40px;
@@ -106,6 +99,7 @@ img.logo {
 /* nav */
 
 nav {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -153,7 +147,7 @@ nav div#logo {
     /*margin: 800px;*/
     /*margin-bottom: 400px;*/
     /*margin-top: 300px;*/
-    margin-bottom: 866px;
+    margin-bottom: 899px;
 }
     
     
