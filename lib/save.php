@@ -18,16 +18,39 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
     $exe_desc = htmlentities($_POST['exe_desc'], ENT_QUOTES);
     $exe_usr_id = $_SESSION['usr']['usr_id'];
     $exe_cat = htmlentities($_POST['exe_cat'], ENT_QUOTES);
+    $exe_id = htmlentities($_POST['exe_id'], ENT_QUOTES);
 
-//    if ($_POST["editsavebutton"] == "Save Changes" and $formname == "edit-form") {
-//        $sql = "UPDATE exercises SET
-//                      exe_name='$exe_name',
-//                      exe_sets='$exe_sets',
-//                      exe_reps='$exe_reps',
-//                      exe_desc='$exe_desc',
-//                      exe_usr_id='$exe_usr_id',
-//                      exe_cat='$exe_cat'
-//                      WHERE exe_id=73";
+    if ($_POST["savebutton"] == "Save") {
+        $sql = "INSERT INTO exercises SET 
+                      exe_name='$exe_name',
+                      exe_sets='$exe_sets',
+                      exe_reps='$exe_reps',
+                      exe_desc='$exe_desc',
+                      exe_usr_id='$exe_usr_id',
+                      exe_cat='$exe_cat'";
+
+        if (ExecuteSQL($sql)) {
+            header("Location:" . $_application_folder . "profile.php");
+        } else {
+            $_SESSION["msg"][] = "Sorry, something went wrong. Your information was not saved.";
+        }
+    } elseif ($_POST["editsavebutton"] == "Save Changes") {
+        $sql = "UPDATE exercises SET
+                      exe_name='$exe_name',
+                      exe_sets='$exe_sets',
+                      exe_reps='$exe_reps',
+                      exe_desc='$exe_desc',
+                      exe_usr_id='$exe_usr_id',
+                      exe_cat='$exe_cat'
+                      WHERE exe_id='$exe_id'";
+        if (ExecuteSQL($sql)) {
+            header("Location:" . $_application_folder . "profile.php");
+        } else {
+            $_SESSION["msg"][] = "Sorry, something went wrong. Your information was not updated.";
+        }
+    }
+}
+//
 //
 ////        $sql = "UPDATE $tablename SET " . implode(", ", $sql_body) . " WHERE $pkey=" . $_POST[$pkey];
 //        if (ExecuteSQL($sql)) {
@@ -39,23 +62,7 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
 ////            echo "failed to update exercise";
 //            header("Location:".$_application_folder."profile.php");
 //        }
- //   } else {
-        $sql = "INSERT INTO exercises SET 
-                      exe_name='$exe_name',
-                      exe_sets='$exe_sets',
-                      exe_reps='$exe_reps',
-                      exe_desc='$exe_desc',
-                      exe_usr_id='$exe_usr_id',
-                      exe_cat='$exe_cat'";
-
-        if ( ExecuteSQL($sql) )
-        {
-                header("Location:".$_application_folder."profile.php");
-        }
-        else
-        {
-            $_SESSION["msg"][] = "Sorry, something went wrong. Your information was not saved." ;
-        }
+    //   } else {
 //        $sql = "INSERT INTO $tablename SET " . implode(", ", $sql_body);
 //        if (ExecuteSQL($sql)) $new_url = "https://wdev.be/wdev_nicole/dag2/$afterinsert?insertOK=true";
 //        if (ExecuteSQL($sql)) {
@@ -69,7 +76,7 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
 ////            $_SESSION["msg"][] = "Failed to insert data";
 //        }
 //    }
-}
+
 
 
 
