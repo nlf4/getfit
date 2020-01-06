@@ -1,3 +1,4 @@
+<!--template voor edit formulier -->
 <div class="wrapper">
     <h1 id="edit-exercise-heading">Edit Exercise</h1>
     <form method="post" action="lib/save.php" class="form" id="edit-form">
@@ -24,9 +25,6 @@
                 <label for="exe_cat" class="col-form-label">Category</label>
                 <input type="text" class="form-control" id="exe_cat" name="exe_cat" value="@@exe_cat@@">
 
-                <!--                <label for="exe_img" class="col-form-label">Image</label>-->
-                <!--                <input type="text" class="form-control" id="exe_img" name="exe_img" value="">-->
-
                 <input type="submit" name="editsavebutton" id="editsavebutton" value="Save Changes">
             </div>
 
@@ -37,15 +35,11 @@
                 </div>
                 <div id="three" class="upload">
                     <label>Image </label>
-                    <img src="img/@@exe_img@@" id="exe_img">
-                    <input type="file" name="exe_img" id="exe_img" value="New image">
+<!--                    <img src="img/@@exe_img@@" id="exe_img">-->
+                    <input type="file" name="exe_img2" id="exe_img2" value="New image">
                 </div>
             </div>
         </div>
-
     </form>
-
-
-
 </div>
 

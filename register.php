@@ -12,6 +12,8 @@ $css = array("register.css");
 BasicHead($css);
 ?>
 <body>
+<!--navigatie--------------------------------------->
+
         <nav>
             <div id="logo"><a href="login.php" title="logo"><img src="img/logo4.svg" alt="getfiT logo" class="logo"></a></div>
             <div id="links">
@@ -19,9 +21,13 @@ BasicHead($css);
                 <li><a href="#contact">Contact</a></li>
             </div>
         </nav>
+<!--form-------------------------------------------->
+
         <div class="container">
             <?php print LoadTemplate("register"); ?>
         </div>
+<!--About, Contact, Copyright secties-------------------->
+
             <section data-brackets-id="57" class="testimonials" id="about">
                 <h3 data-brackets-id="58" class="title">About Us</h3>
                 <p data-brackets-id="60" class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsum nulla eum ab minima sint, quis nemo omnis voluptatum adipisci beatae a amet odit similique, eos at sed dolor! Qui.
@@ -35,8 +41,11 @@ BasicHead($css);
                     <p>email: getfit@gmail.com         <br>     tel: + 32 123 45 67 89 </p>
                 </form>
             </section>
+<!--Footer--------------------------->
             <?php Footer(); ?>
     </body>
+
+<!--JS voor input label-------------->
 
     <script type="text/javascript">
         $(".txtb input").on("focus",function(){

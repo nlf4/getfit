@@ -1,12 +1,11 @@
-<!--template for one column in the body of options.php-->
+<!--template voor een categorie in options.php-->
 
-    <form action="post" action="lib/option.php">
+    <form class="options-form" action="post" action="lib/option.php">
         <div class="options-item">
             <input type="hidden" id="opt_name" name="opt_name" value="@@opt_name@@">
             <input type="hidden" id="opt_id" name="opt_id" value="@@opt_id@@">
             <!--    <a href="exercise_form.php?id=@@exe_id@@">-->
             <a href="exercise_form.php?id=@@opt_id@@">
-
                 <img class="img-fluid" src=img/@@opt_img@@.jpg>
             </a>
         </div>

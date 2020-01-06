@@ -50,9 +50,10 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
 //        $_SESSION["msg"][] = "Sorry, you need to upload an image.";
 //        die();
 //    }
+//    and ($img_ext === 'jpg' or $img_ext === 'png')
 
     // controleer file fout, extensie en grootte
-    if (($_FILES['exe_img']['error'] == 0) and ($_FILES['exe_img']['size'] < 4000000) and ($img_ext === 'jpg' or $img_ext === 'png')) {
+    if (($_FILES['exe_img']['error'] == 0) and ($_FILES['exe_img']['size'] < 4000000)) {
 
         //    insert --------------------------------
 
@@ -74,10 +75,16 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
             }
         }
 
-
         //        update ----------------------------
 
-        if ($_POST["editsavebutton"] == "Save Changes") {
+        elseif ($_POST["editsavebutton"] == "Save Changes") {
+
+            $exe_img = $_FILES['exe_img2'];
+            $exe_img_name = $exe_img['name'];
+            $img_path = '../img/' . $exe_img_name;
+
+            move_uploaded_file($exe_img['tmp_name'], $img_path);
+
             $sql = "UPDATE exercises SET
                           exe_name='$exe_name',
                           exe_sets='$exe_sets',
@@ -92,18 +99,18 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
                 $_SESSION["msg"][] = "Sorry, your information was not updated.";
             }
         }
-    } elseif ($_FILES['exe_img']['size'] > 4000000) {
-        // error
-        header("Location:" . $_application_folder . "exercise_form.php?id=1");
-        $_SESSION["msg"][] = "Sorry, the uploaded file exceeds the maximum size.";
-//        if ($_FILES['exe_img']['error'] == 1){
-//            $_SESSION["msg"][] = "Sorry, the uploaded file exceeds the maximum size.";
-//        }
-    } elseif (!($img_ext === 'jpg' or $img_ext === 'png')) {
-        header("Location:" . $_application_folder . "exercise_form.php?id=1");
-        $_SESSION["msg"][] = "Sorry, the uploaded file type is not accepted.";
     } else {
-        header("Location:" . $_application_folder . "profile.php");
+        if ($_FILES['exe_img']['size'] > 4000000) {
+            // error
+            header("Location:" . $_application_folder . "exercise_form.php?id=1");
+            $_SESSION["msg"][] = "Sorry, the uploaded file exceeds the maximum size.";
+        }
+        if (!($img_ext === 'jpg' or $img_ext === 'png')) {
+            header("Location:" . $_application_folder . "exercise_form.php?id=1");
+            $_SESSION["msg"][] = "Sorry, the uploaded file type is not accepted.";
+        } else {
+            header("Location:" . $_application_folder . "profile.php");
+        }
     }
 }
 

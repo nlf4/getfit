@@ -9,10 +9,12 @@ if ( isset($_SESSION['usr']) ) {
 }
 $css = array("login.css");
 BasicHead($css);
-//NavBar();
 
 ?>
 <body>
+
+<!--navigatie---------------------->
+
     <nav>
         <div id="logo"><a href="login.php" title="logo"><img src="img/logo4.svg" alt="getfiT logo" class="logo"></a></div>
         <div id="links">
@@ -21,11 +23,16 @@ BasicHead($css);
         </div>
     </nav>
     <?php ShowMessages(); ?>
+
+<!--login form------------------------>
+
     <div class="container">
         <?php
         print LoadTemplate("login");
         ?>
     </div>
+
+<!--about, contact, footer------------->
     <section data-brackets-id="57" class="testimonials" id="about">
         <h3 data-brackets-id="58" class="title">About Us</h3>
         <p data-brackets-id="60" class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsum nulla eum ab minima sint, quis nemo omnis voluptatum adipisci beatae a amet odit similique, eos at sed dolor! Qui.
@@ -41,7 +48,7 @@ BasicHead($css);
     <?php Footer(); ?>
 </body>
 
-
+<!--JS voor input label-------------------->
 
 <script type="text/javascript">
     $(".txtb input").on("focus",function(){

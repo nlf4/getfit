@@ -9,6 +9,8 @@ BasicHead($css);
 <div class="container">
     <div class="band">
         <a href="#"><img id="user-icon" src="img/user-icon.JPG" alt="user-icon"></a>
+
+<!--        begroeting------------------------>
         <?php
 //        $data = GetData("select * from users where usr_id=" . $_GET['id'] );
 //        $template = LoadTemplate("profile_greeting");
@@ -31,6 +33,9 @@ BasicHead($css);
     </div>
     <div id="trap">
     </div>
+
+<!--    kolommen--------------------------->
+
     <div class="headings">
         <div class="workout-heading">
             <h2>Workouts</h2>

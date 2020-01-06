@@ -11,9 +11,7 @@ require_once "authorisation.php";
 require_once "show_messages.php";
 
 
-
-
-//redirect naar NO ACCESS pagina als de gebruiker niet ingelogd is en niet naar
+//redirect naar 'no access' als de gebruiker niet ingelogd is en niet naar
 //de loginpagina gaat
 if ( ! isset($_SESSION['usr']) AND ! $login_form AND ! $register_form AND ! $no_access)
 {

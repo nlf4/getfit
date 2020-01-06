@@ -242,6 +242,12 @@ p.copyright {
     color: mediumpurple
 }
 
+@media (max-width: 800px) {
+    .container {
+        margin-bottom: 300px;
+    }
+}
+
 /*#midden {*/
 /*    text-decoration: none;*/
 /*    list-style-type: none;*/

@@ -1,4 +1,5 @@
 <?php
+//unset sessie als gebruiker uitlogt
 session_start();
 session_destroy();
 unset($_SESSION);

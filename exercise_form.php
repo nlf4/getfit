@@ -6,7 +6,12 @@ NavBar();
 
 ?>
     <body>
+<!--    berichten---------------->
+
     <p id="file-message"><?php ShowMessages(); ?></p>
+
+<!--new exercise formulier ------------->
+
         <?php
             $data = GetData("select * from options where opt_id=" . $_GET['id'] );
             $template = LoadTemplate("exercise_form_template");

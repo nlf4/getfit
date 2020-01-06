@@ -9,14 +9,14 @@ if ( $formname == "login_form" AND $buttonvalue == "Log in" )
 {
     if ( CheckLogin( $_POST['usr_email'], $_POST['usr_password'] ) )
     {
-//        $string = $_SESSION['usr']['usr_email'];
-//        $name = strtok($string, '@');
+        //login successful
+//        $string = $_SESSION['usr']['usr_firstname'];
 //        $_SESSION["msg"][] = "Welcome, " . $name . "!" ;
-//        header("Location: https://wdev.be/wdev_nicole/dag2/profile.php");
         header("Location:".$_application_folder."profile.php");
     }
     else
     {
+        //foutmelding
         $_SESSION["msg"][] = "Sorry! Wrong password!";
         header("Location:".$_application_folder."login.php");
     }

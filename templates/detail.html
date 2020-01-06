@@ -1,3 +1,5 @@
+<!--template voor exercise detail pagina-->
+
 <div class="wrapper">
     <h1 id="detail-heading">@@exe_name@@</h1>
 
@@ -7,7 +9,6 @@
         <input type="hidden" id="afterinsert" name="afterinsert" value="profile.php">
         <input type="hidden" id="tablename" name="tablename" value="exercises">
         <input type="hidden" id="pkey" name="pkey" value="@@exe_id@@">
-
 
 
         <div class="details">
@@ -45,10 +46,7 @@
         <div class="button">
             <a id="backbutton" href="profile.php"><</a>
             <a href="edit_form.php?id=@@exe_id@@" name="editbutton" id="editbutton">Edit</a>
-<!--            <input type="submit" name="deletebutton" id="deletebutton" value="Delete">-->
             <button class="deletebutton" value="Delete" type="submit" name="deletebutton">Delete</button>
-<!--            <a href="lib/delete.php?id=@@exe_id@@" name="deletebutton" id="deletebutton">Delete</a>-->
-<!--            dlete.php?id=@@exe_id@@-->
         </div>
     </form>
 
