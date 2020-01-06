@@ -62,7 +62,7 @@ h1 {
     margin: 20px auto 20px auto;
     width: 400px;
     font-weight: 200;
-    line-height: 30px;
+    line-height: 50px;
     background: rgba(9, 32, 37, 0.84);
     font-family: Open Sans, sans-serif;
     font-size: 48px;
@@ -77,6 +77,7 @@ h1 {
     border-radius: 25px;
     padding: 1.9em;
 }
+
 form#detail {
     padding: 30px;
     border-radius: 10px;
@@ -144,8 +145,8 @@ form#detail {
 }
 
 img#exe_img {
-    height: 225px;
-    width: auto;
+    height: auto;
+    max-width: 275px;
     margin: 15px;
     border-radius: 10px;
 }

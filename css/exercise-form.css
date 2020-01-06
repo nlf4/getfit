@@ -50,6 +50,14 @@ body {
     cursor: pointer;
 }
 
+p#message {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    background: rgba(9, 32, 37, 0.84);
+}
+
 h1 {
     margin: 20px auto 20px auto;
     width: 400px;
@@ -90,6 +98,13 @@ h1 {
     padding: 15px 30px 15px 15px;
 }
 
+img#exe_img {
+    height: auto;
+    max-width: 275px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
 .upload {
     min-width: 16em;
     height: 150px;
@@ -97,9 +112,6 @@ h1 {
     width: 70px;
     margin: 20px;
 
-}
-.upload input#fileupload {
-    border: 1px solid white;
 }
 
 .details {

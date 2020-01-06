@@ -2,7 +2,7 @@
 require_once "autoload.php";
 //var_dump($_POST);
 //var_dump($_SESSION['usr']['usr_id']);
-//var_dump($_POST['exe_id']);
+
 //print json_encode($_FILES);
 
 $tablename = $_POST["tablename"];
@@ -11,7 +11,7 @@ $afterinsert = $_POST["afterinsert"];
 $pkey = $_POST["pkey"];
 
 
-// insert
+
 if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes") {
     $exe_name = htmlentities($_POST['exe_name'], ENT_QUOTES);
     $exe_sets = htmlentities($_POST['exe_sets'], ENT_QUOTES);
@@ -21,44 +21,113 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
     $exe_cat = htmlentities($_POST['exe_cat'], ENT_QUOTES);
     $exe_id = htmlentities($_POST['exe_id'], ENT_QUOTES);
 
-    // behandling van afbeelding upload
+    // behandling van afbeelding --------------------------
+
     $exe_img = $_FILES['exe_img'];
     $exe_img_name = $exe_img['name'];
-    $img_path = '../img/'.$exe_img_name;
+    $img_path = '../img/' . $exe_img_name;
+
+    $img_name = $_FILES['name'];
+    $img_type = $_FILES['type'];
+    $img_tmp = $_FILES['tmp_name'];
+    $img_error = $_FILES['error'];
+    $img_size = $_FILES['size'];
+
+
+    $path_parts = pathinfo($img_path);
+    $img_ext = $path_parts['extension'];
 
     move_uploaded_file($exe_img['tmp_name'], $img_path);
 
-    if ($_POST["savebutton"] == "Save") {
-        $sql = "INSERT INTO exercises SET 
-                      exe_name='$exe_name',
-                      exe_img='$exe_img_name',
-                      exe_sets='$exe_sets',
-                      exe_reps='$exe_reps',
-                      exe_desc='$exe_desc',
-                      exe_usr_id='$exe_usr_id',
-                      exe_cat='$exe_cat'";
+    if ((empty($_POST['exe_name'])) or empty($_POST['exe_desc'])) {
+        header("Location:" . $_application_folder . "exercise_form.php?id=1");
+        $_SESSION["msg"][] = "Sorry, you need to enter a name and description.";
+        die();
+    }
 
-        if (ExecuteSQL($sql)) {
-            header("Location:" . $_application_folder . "profile.php");
-        } else {
-            $_SESSION["msg"][] = "Sorry, something went wrong. Your information was not saved.";
+//    if(empty($_FILES[$exe_img])){
+//        header("Location:" . $_application_folder . "exercise_form.php?id=1");
+//        $_SESSION["msg"][] = "Sorry, you need to upload an image.";
+//        die();
+//    }
+
+    // controleer file fout, extensie en grootte
+    if (($_FILES['exe_img']['error'] == 0) and ($_FILES['exe_img']['size'] < 4000000) and ($img_ext === 'jpg' or $img_ext === 'png')) {
+
+        //    insert --------------------------------
+
+        if ($_POST["savebutton"] == "Save") {
+
+            $sql = "INSERT INTO exercises SET 
+                          exe_name='$exe_name',
+                          exe_img='$exe_img_name',
+                          exe_sets='$exe_sets',
+                          exe_reps='$exe_reps',
+                          exe_desc='$exe_desc',
+                          exe_usr_id='$exe_usr_id',
+                          exe_cat='$exe_cat'";
+
+            if (ExecuteSQL($sql)) {
+                header("Location:" . $_application_folder . "profile.php");
+            } else {
+                $_SESSION["msg"][] = "Sorry, your information was not saved.";
+            }
         }
-    } elseif ($_POST["editsavebutton"] == "Save Changes") {
-        $sql = "UPDATE exercises SET
-                      exe_name='$exe_name',
-                      exe_sets='$exe_sets',
-                      exe_reps='$exe_reps',
-                      exe_desc='$exe_desc',
-                      exe_usr_id='$exe_usr_id',
-                      exe_cat='$exe_cat'
-                      WHERE exe_id='$exe_id'";
-        if (ExecuteSQL($sql)) {
-            header("Location:" . $_application_folder . "profile.php");
-        } else {
-            $_SESSION["msg"][] = "Sorry, something went wrong. Your information was not updated.";
+
+
+        //        update ----------------------------
+
+        if ($_POST["editsavebutton"] == "Save Changes") {
+            $sql = "UPDATE exercises SET
+                          exe_name='$exe_name',
+                          exe_sets='$exe_sets',
+                          exe_reps='$exe_reps',
+                          exe_desc='$exe_desc',
+                          exe_usr_id='$exe_usr_id',
+                          exe_cat='$exe_cat'
+                          WHERE exe_id='$exe_id'";
+            if (ExecuteSQL($sql)) {
+                header("Location:" . $_application_folder . "profile.php");
+            } else {
+                $_SESSION["msg"][] = "Sorry, your information was not updated.";
+            }
         }
+    } elseif ($_FILES['exe_img']['size'] > 4000000) {
+        // error
+        header("Location:" . $_application_folder . "exercise_form.php?id=1");
+        $_SESSION["msg"][] = "Sorry, the uploaded file exceeds the maximum size.";
+//        if ($_FILES['exe_img']['error'] == 1){
+//            $_SESSION["msg"][] = "Sorry, the uploaded file exceeds the maximum size.";
+//        }
+    } elseif (!($img_ext === 'jpg' or $img_ext === 'png')) {
+        header("Location:" . $_application_folder . "exercise_form.php?id=1");
+        $_SESSION["msg"][] = "Sorry, the uploaded file type is not accepted.";
+    } else {
+        header("Location:" . $_application_folder . "profile.php");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 //
 ////        $sql = "UPDATE $tablename SET " . implode(", ", $sql_body) . " WHERE $pkey=" . $_POST[$pkey];
