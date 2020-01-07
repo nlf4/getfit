@@ -14,6 +14,8 @@ body {
     justify-content: center;
 }
 
+/*logo******************************/
+
 #svg-logo {
     width: 175px;
     margin-left: -145px;
@@ -21,6 +23,8 @@ body {
     margin-top: 40px;
 
 }
+
+/*profiel container********************/
 
 .container {
     height: 1200px;
@@ -87,6 +91,8 @@ p#message {
     width: 600px;
     margin-bottom: 30px;
 }
+
+/*sectie met kolommen****************************/
 section {
     display: flex;
     justify-content: center;
@@ -183,7 +189,7 @@ section {
     border-radius: 25px;
     border: none;
 }
-
+ /*new exercise button*****************/
 #add-btn {
     font-size: 24px;
     border: none;

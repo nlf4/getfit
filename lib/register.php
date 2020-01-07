@@ -26,7 +26,7 @@ if ( $formname == "registration_form" AND $_POST['registerbutton'] == "Register"
     $password_encrypted = password_hash ( $_POST["usr_password"] , PASSWORD_DEFAULT );
     $passwordconfirm_encrypted = password_hash ( $_POST["usr_passwordconfirm"] , PASSWORD_DEFAULT );
 
-    //insert
+    //insert ( beveiligen van inputs)
     $sql = "INSERT INTO $tablename SET " .
         " usr_firstname='" . htmlentities($_POST['usr_firstname'], ENT_QUOTES) . "' , " .
         " usr_lastname='" . htmlentities($_POST['usr_lastname'], ENT_QUOTES) . "' , " .

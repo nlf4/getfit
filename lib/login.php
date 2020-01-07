@@ -17,8 +17,8 @@ if ( $formname == "login_form" AND $buttonvalue == "Log in" )
     else
     {
         //foutmelding
-        $_SESSION["msg"][] = "Sorry! Wrong password!";
-        header("Location:".$_application_folder."login.php");
+        die("This user does not exist, please register.");
+//        header("Location:".$_application_folder."login.php");
     }
 }
 else

@@ -11,8 +11,10 @@ body{
   min-height: 100vh;
   background-image: url(../img/gym.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
+/*login form*****************************/
 
 .login-form{
   width: 460px;
@@ -33,6 +35,8 @@ body{
     font-size: 48px;
     letter-spacing: 3px;
 }
+
+/*input*******************************/
 
 .txtb{
   border-bottom: 2px solid #49767C;
@@ -96,7 +100,7 @@ body{
   font-size: 20px;
 }
 
-/* nav */
+/* nav ***************************/
 
 nav {
     margin-top: 20px;
@@ -206,7 +210,7 @@ footer p {
     padding: 10px;
 }
 
-p.copyright {
+footer p.copyright {
     color: #073239;
 }
 
@@ -244,7 +248,10 @@ p.copyright {
 
 @media (max-width: 800px) {
     .container {
-        margin-bottom: 300px;
+        margin-bottom: 800px;
+    }
+    .about {
+        margin-top: 200px;
     }
 }
 

@@ -100,10 +100,11 @@ if ($_POST["savebutton"] == "Save" or $_POST["editsavebutton"] == "Save Changes"
             }
         }
     } else {
-        if ($_FILES['exe_img']['size'] > 4000000) {
+        if ($_FILES['exe_img']['size'] > 2000000) {
             // error
             header("Location:" . $_application_folder . "exercise_form.php?id=1");
             $_SESSION["msg"][] = "Sorry, the uploaded file exceeds the maximum size.";
+            die();
         }
         if (!($img_ext === 'jpg' or $img_ext === 'png')) {
             header("Location:" . $_application_folder . "exercise_form.php?id=1");

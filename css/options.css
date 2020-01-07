@@ -13,6 +13,8 @@ body {
     background-repeat: no-repeat;
 }
 
+/*navigatie*********************/
+
 nav {
     padding: 5px 20px;
 }
@@ -38,6 +40,8 @@ nav a {
 .logo a img {
     width: 200px;
 }
+
+/*options******************/
 
 .item.button a {
     padding: 7px 15px;

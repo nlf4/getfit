@@ -41,6 +41,30 @@ if ($_POST["deletebutton"] == "Delete") {
         echo 'Deletion error';
         header("Location:".$_application_folder."detail.php");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    try {
 //        $pdo = GetConnection();
 //        // set the PDO error mode to exception

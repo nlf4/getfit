@@ -60,8 +60,8 @@ BasicHead($css);
                     <input type="hidden" id="tablename" name="tablename" value="exercises">
                     <input type="hidden" id="pkey" name="pkey" value="exe_id">
 
-                    <input id="search" name="search" type="text" placeholder="Search">
-                    <input id="searchsubmit" type="submit" value="Go">
+<!--                    <input id="search" name="search" type="text" placeholder="Search">-->
+<!--                    <input id="searchsubmit" type="submit" value="Go">-->
                 </form>
                 <?php
                 $data = GetData("select * from exercises where exe_usr_id=" . $_SESSION['usr']['usr_id']);
